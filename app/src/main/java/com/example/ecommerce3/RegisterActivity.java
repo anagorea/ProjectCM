@@ -83,7 +83,7 @@ private EditText InputName, InputPhoneNumber, InputPassword;
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot)
                 {
                     if (!(dataSnapshot.child("Users").child(phone).exists())) {
                         HashMap<String, Object> userdataMap = new HashMap<>();
@@ -93,25 +93,26 @@ private EditText InputName, InputPhoneNumber, InputPassword;
 
                         RootRef.child("Users").child(phone).updateChildren(userdataMap)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(RegisterActivity.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show();
-                                            loadingBar.dismiss();
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(RegisterActivity.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
 
-                                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                            startActivity(intent);
-                                        } else {
-                                            loadingBar.dismiss();
-                                            Toast.makeText(RegisterActivity.this, "Network Error: Please try again after some time...", Toast.LENGTH_SHORT).show();
-                                        }
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        loadingBar.dismiss();
+                                        Toast.makeText(RegisterActivity.this, "Network Error: Please try again after some time...", Toast.LENGTH_SHORT).show();
                                     }
+                                }
 
-                                });
+                            });
 
-
+                        }
                     }
                 }
+
             }
         });
     }
