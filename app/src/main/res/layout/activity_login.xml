@@ -42,7 +42,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
         android:hint="Password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="17sp"
