@@ -85,7 +85,8 @@ private EditText InputName, InputPhoneNumber, InputPassword;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
                 {
-                    if (!(dataSnapshot.child("Users").child(phone).exists())) {
+                    if (!(dataSnapshot.child("Users").child(phone).exists()))
+                    {
                         HashMap<String, Object> userdataMap = new HashMap<>();
                         userdataMap.put("phone", phone);
                         userdataMap.put("password", password);
@@ -111,7 +112,7 @@ private EditText InputName, InputPhoneNumber, InputPassword;
 
                         }
                     }
-                }
+                });
 
             }
         });
