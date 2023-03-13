@@ -12,12 +12,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo3"/>
+        android:src="@drawable/logo2"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android Knowledge"
+        android:text="Book Store"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
