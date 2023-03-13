@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F13F1F1"
+    android:background="@color/white"
     tools:context=".HomeFragment">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,9 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:drawableLeft="@drawable/search"
-            android:background="@drawable/SearchBar"
+            android:background="@drawable/searchbar"
             android:padding="13dp"
             android:hint="Search Your Item Here..."
+            android:textSize="20sp"
             android:drawablePadding="5dp" />
         <LinearLayout
             android:layout_marginLeft="10dp"
@@ -36,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:text="Popular Products"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -45,7 +56,7 @@
                 android:id="@+id/view_all_popular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:layout_weight="1"
                 android:text="View All"
                 android:gravity="end"
@@ -76,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:text="Explore Products"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -85,7 +96,7 @@
                 android:id="@+id/view_all_explore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:layout_weight="1"
                 android:text="View All"
                 android:gravity="end"
@@ -112,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:text="Recommended Products"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -121,7 +132,7 @@
                 android:id="@+id/view_all_recommended"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gobold"
+                android:fontFamily="@font/alice"
                 android:layout_weight="1"
                 android:text="View All"
                 android:gravity="end"
@@ -140,5 +151,5 @@
 
 
     </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</RelativeLayout>
