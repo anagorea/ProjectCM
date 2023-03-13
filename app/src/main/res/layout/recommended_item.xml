@@ -30,6 +30,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:textSize="13sp"
             android:id="@+id/rec_dec"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ratingbar"/>
             <TextView
+                android:textSize="13sp"
                 android:id="@+id/rec_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

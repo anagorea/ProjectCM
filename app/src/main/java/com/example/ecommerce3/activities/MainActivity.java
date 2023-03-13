@@ -1,14 +1,14 @@
-package com.example.ecommerce3;
+package com.example.ecommerce3.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.ecommerce3.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.ecommerce3;
+package com.example.ecommerce3.activities;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -13,6 +13,14 @@ import android.os.Bundle;
 //import android.widget.Toolbar;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.ecommerce3.CartFragment;
+import com.example.ecommerce3.CategoryFragment;
+import com.example.ecommerce3.HomeFragment;
+import com.example.ecommerce3.MyOrdersFragment;
+import com.example.ecommerce3.NewprodFragment;
+import com.example.ecommerce3.OffersFragment;
+import com.example.ecommerce3.ProfileFragment;
+import com.example.ecommerce3.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
