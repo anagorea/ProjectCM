@@ -13,19 +13,34 @@
             android:title="Home"/>
 
         <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/nav_settings"
-            android:title="Settings"/>
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/nav_profile"
+            android:title="Profile"/>
 
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/nav_share"
-            android:title="Share"/>
+            android:id="@+id/nav_category"
+            android:icon="@drawable/nav_category"
+            android:title="Categories"/>
 
         <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/nav_about"
-            android:title="About Us"/>
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/nav_offers"
+            android:title="Offers"/>
+
+        <item
+            android:id="@+id/nav_newprod"
+            android:icon="@drawable/nav_newprod"
+            android:title="New Products"/>
+
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/nav_orders"
+            android:title="My Orders"/>
+
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/nav_cart"
+            android:title="My Cart"/>
     </group>
     <item
         android:title="">

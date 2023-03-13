@@ -37,7 +37,8 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="description"/>
+            android:text="description"
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="5,0"
+                android:textSize="10sp"
                 android:layout_weight="1"
                 android:fontFamily="@font/gobold"/>
 
@@ -65,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="Discount 20% Off"
+                android:textSize="15sp"
                 android:textColor="@color/purple_700"
                 android:textStyle="bold"
                 android:gravity="end"

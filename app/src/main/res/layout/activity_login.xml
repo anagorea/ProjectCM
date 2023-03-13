@@ -58,23 +58,23 @@
         android:layout_marginTop="5dp"
         >
 
-   <CheckBox
-        android:id="@+id/remember_me_chkb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remember me"
-        android:textColor="@color/white"
-        android:gravity="center_vertical"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="17dp"
-        />
+        <CheckBox
+            android:id="@+id/remember_me_chkb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:gravity="center_vertical"
+            android:text="Remember me"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/forget_password_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Froget password?"
+        android:text="Forget password?"
         android:textColor="@color/white"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -101,7 +101,7 @@
         android:id="@+id/admin_panel_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I'm an Admin?"
+        android:text=""
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/login_btn"
         android:textColor="@color/white"
