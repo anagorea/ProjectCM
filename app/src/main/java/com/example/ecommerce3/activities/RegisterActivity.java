@@ -36,10 +36,10 @@ public class RegisterActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        CreateAccountButton = (Button) findViewById(R.id.register_btn);
-        InputName = (EditText) findViewById(R.id.register_username_input);
-        InputPassword = (EditText) findViewById(R.id.register_password_input);
-        InputEmail = (EditText) findViewById(R.id.register_email_input);
+        CreateAccountButton = findViewById(R.id.register_btn);
+        InputName = findViewById(R.id.register_username_input);
+        InputPassword = findViewById(R.id.register_password_input);
+        InputEmail = findViewById(R.id.register_email_input);
         loadingBar = new ProgressDialog(this);
 
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {

@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        joinNowButton = (Button) findViewById(R.id.main_joi_now_btn);
+        joinNowButton = findViewById(R.id.main_joi_now_btn);
         joinNowButton.getBackground().setAlpha(150);  // 25% transparent
-        loginButton = (Button) findViewById(R.id.main_login_btn);
+        loginButton = findViewById(R.id.main_login_btn);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

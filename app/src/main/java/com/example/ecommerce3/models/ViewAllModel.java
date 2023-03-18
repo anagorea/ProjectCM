@@ -1,6 +1,8 @@
 package com.example.ecommerce3.models;
 
-public class ViewAllModel {
+import java.io.Serializable;
+
+public class ViewAllModel implements Serializable {
 
     String name;
     String description;

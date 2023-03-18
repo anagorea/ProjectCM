@@ -45,9 +45,9 @@ public class LoginActivity extends AppCompatActivity {
 
         checkBox();
 
-        LoginButton = (Button) findViewById(R.id.login_btn);
-        InputEmail = (EditText) findViewById(R.id.login_email_input);
-        InputPassword = (EditText) findViewById(R.id.login_password_input);
+        LoginButton = findViewById(R.id.login_btn);
+        InputEmail = findViewById(R.id.login_email_input);
+        InputPassword = findViewById(R.id.login_password_input);
        // AdminLink = (TextView) findViewById(R.id.admin_panel_link);
        // NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
         loadingBar = new ProgressDialog(this);

@@ -13,11 +13,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".DetailedActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Detailed"
-            android:exported="false" />
+            android:name=".activities.DetailedActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".activities.HomeActivity"
             android:exported="true"
