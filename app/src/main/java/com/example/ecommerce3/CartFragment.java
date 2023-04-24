@@ -1,12 +1,19 @@
 package com.example.ecommerce3;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ecommerce3.adapters.MyCartAdapter;
@@ -39,7 +47,7 @@ public class CartFragment extends Fragment {
     MyCartAdapter cartAdapter;
     List<MyCartModel> cartModelList;
 
-    public CartFragment(){
+    public CartFragment() {
 
     }
 
@@ -58,11 +66,12 @@ public class CartFragment extends Fragment {
         overTotalAmount = root.findViewById(R.id.TextView6);
 
         LocalBroadcastManager.getInstance(getActivity())
-                .registerReceiver(mMessageReceiver ,new IntentFilter("MyTotalAmount"));
+                .registerReceiver(mMessageReceiver, new IntentFilter("MyTotalAmount"));
 
         cartModelList = new ArrayList<>();
-        cartAdapter = new MyCartAdapter(getActivity(),cartModelList);
+        cartAdapter = new MyCartAdapter(getActivity(), cartModelList);
         recyclerView.setAdapter(cartAdapter);
+
 
         db.collection("AddToCart").document(auth.getCurrentUser().getUid())
                 .collection("CurrentUser").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -83,7 +92,13 @@ public class CartFragment extends Fragment {
 
         return root;
     }
-        public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+
+    private NotificationManager getSystemService(Class<NotificationManager> notificationManagerClass) {
+    return null;
+    }
+
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
 

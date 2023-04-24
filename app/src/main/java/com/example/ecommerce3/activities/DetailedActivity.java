@@ -2,9 +2,20 @@ package com.example.ecommerce3.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.pm.PackageManager;
 import android.media.Image;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +25,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.example.ecommerce3.CartFragment;
 import com.example.ecommerce3.R;
 import com.example.ecommerce3.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,14 +46,15 @@ public class DetailedActivity extends AppCompatActivity {
 
 
     ImageView detailedImg;
-    TextView price,rating,description;
+    TextView price, rating, description;
     Button addToCart;
     ImageView addItem, removeItem;
-   // Toolbar toolbar;
+    // Toolbar toolbar;
 
     FirebaseFirestore firestore;
     FirebaseAuth auth;
     ViewAllModel viewAllModel = null;
+    Button button;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -56,9 +69,10 @@ public class DetailedActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         final Object object = getIntent().getSerializableExtra("detail");
-        if (object instanceof ViewAllModel){
+        if (object instanceof ViewAllModel) {
             viewAllModel = (ViewAllModel) object;
         }
+
 
         quantity = findViewById(R.id.quantity);
 
@@ -70,15 +84,39 @@ public class DetailedActivity extends AppCompatActivity {
         rating = findViewById(R.id.detailed_rating);
         description = findViewById(R.id.detailed_dec);
 
-        if (viewAllModel != null){
+        if (viewAllModel != null) {
             Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(detailedImg);
 
             rating.setText(viewAllModel.getRating());
             description.setText(viewAllModel.getDescription());
-            price.setText("Price  :$"+viewAllModel.getPrice()+"");
+            price.setText("Price  :$" + viewAllModel.getPrice() + "");
 
             totalPrice = viewAllModel.getPrice() * totalQuantity;
         }
+
+
+        button = findViewById(R.id.notify_me);
+        final long [] vibe = {0,500};
+        final Uri notificationsound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NotificationCompat.Builder mbuilder = (NotificationCompat.Builder)
+                        new NotificationCompat.Builder(getApplicationContext())
+                                .setSmallIcon(R.drawable.logo,10)
+                                .setSound(notificationsound)
+                                .setVibrate(vibe)
+                                .setContentTitle("Notification")
+                                .setContentText("This is a notification for you");
+
+                NotificationManager notificationManager = (NotificationManager)
+                        getSystemService(NOTIFICATION_SERVICE);
+                notificationManager.notify(0,mbuilder.build());
+            }
+        });
+
+        
 
         addToCart = findViewById(R.id.add_to_cart);
         addToCart.setOnClickListener(new View.OnClickListener() {
