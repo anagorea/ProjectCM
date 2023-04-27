@@ -41,6 +41,11 @@
             android:id="@+id/nav_cart"
             android:icon="@drawable/nav_cart"
             android:title="My Cart"/>
+
+        <item
+            android:id="@+id/nav_sensor"
+            android:icon="@drawable/sensor"
+            android:title="sensor"/>
     </group>
     <item
         android:title="">

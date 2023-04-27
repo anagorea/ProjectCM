@@ -21,6 +21,7 @@ import com.example.ecommerce3.NewprodFragment;
 import com.example.ecommerce3.OffersFragment;
 import com.example.ecommerce3.ProfileFragment;
 import com.example.ecommerce3.R;
+import com.example.ecommerce3.SensorActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,6 +72,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_cart:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CartFragment()).commit();
                 break;
+
             case R.id.nav_logout:
                 SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -78,6 +80,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 editor.apply();
 
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_sensor:
+//                sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+//                editor = sharedPreferences.edit();
+//                editor.putString("name", "");
+//                editor.apply();
+
+                intent = new Intent(HomeActivity.this, SensorActivity.class);
                 startActivity(intent);
                 break;
         }
